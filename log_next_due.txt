@@ -1,0 +1,550 @@
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 10:45:46 ===
+Usuário ID: 2
+Ciclo atual: 2025-04-15 até 2025-05-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 10:45:59 ===
+Usuário ID: 2
+Ciclo atual: 2025-04-15 até 2025-05-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 10:48:14 ===
+Usuário ID: 2
+Ciclo atual: 2025-04-15 até 2025-05-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 10:48:20 ===
+Usuário ID: 2
+Ciclo atual: 2025-04-15 até 2025-05-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 10:50:35 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '855.00'
+Valor final retornado: 855.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 10:51:48 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '855.00'
+Valor final retornado: 855.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 11:02:02 ===
+Usuário ID: 24
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 11:07:41 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '855.00'
+Valor final retornado: 855.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 11:11:35 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '855.00'
+Valor final retornado: 855.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 11:12:38 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '855.00'
+Valor final retornado: 855.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 11:16:57 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 15:38:07 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-01 15:38:37 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-04 07:10:34 ===
+Usuário ID: 11
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-04 07:10:35 ===
+Usuário ID: 11
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-04 07:13:40 ===
+Usuário ID: 11
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-04 07:13:57 ===
+Usuário ID: 11
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-04 07:20:35 ===
+Usuário ID: 26
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-04 07:20:51 ===
+Usuário ID: 26
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-04 07:23:56 ===
+Usuário ID: 26
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-04 21:10:56 ===
+Usuário ID: 11
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-04 21:19:48 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-04 22:22:49 ===
+Usuário ID: 11
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-04 22:22:59 ===
+Usuário ID: 11
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-06 03:03:16 ===
+Usuário ID: 11
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-06 03:03:19 ===
+Usuário ID: 11
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-08 01:38:06 ===
+Usuário ID: 11
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-08 01:39:20 ===
+Usuário ID: 11
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-11 14:39:43 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-11 14:40:10 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-11 14:58:03 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-11 14:58:43 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-11 14:58:58 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-11 15:03:12 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-11 15:22:49 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-11 15:23:09 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-11 15:30:51 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-11 15:31:10 ===
+Usuário ID: 2
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '400.00'
+Valor final retornado: 400.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:15:31 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:15:47 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:17:07 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:17:55 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:18:13 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:18:32 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:20:46 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:22:04 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:22:13 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:24:55 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:29:13 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:31:41 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:35:04 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:38:20 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:40:14 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '50.00'
+Valor final retornado: 50.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:40:47 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '50.00'
+Valor final retornado: 50.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:40:48 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '50.00'
+Valor final retornado: 50.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:41:04 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '0.00'
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:41:27 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '0.00'
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: '0.00'
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:41:40 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '0.02'
+Valor final retornado: 0.02
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:42:32 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '100.00'
+Valor final retornado: 100.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:44:51 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '170.00'
+Valor final retornado: 170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:48:08 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:49:58 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:50:49 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:50:51 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:51:23 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 10:58:05 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 11:02:57 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 11:03:24 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 11:10:22 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 11:10:28 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 11:11:01 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 11:12:18 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-12 11:12:27 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-14 06:09:32 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-14 06:58:24 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-14 06:59:27 ===
+Usuário ID: 28
+Ciclo vigente: 2025-03-15 até 2025-04-14
+Total encontrado no ciclo atual (payments): '2170.00'
+Valor final retornado: 2170.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-15 00:09:44 ===
+Usuário ID: 2
+Ciclo vigente: 2025-04-15 até 2025-05-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-15 00:10:43 ===
+Usuário ID: 2
+Ciclo vigente: 2025-04-15 até 2025-05-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00
+
+=== NOVA REQUISIÇÃO EM 2025-04-15 00:11:09 ===
+Usuário ID: 2
+Ciclo vigente: 2025-04-15 até 2025-05-14
+Total encontrado no ciclo atual (payments): 0
+Usando fallback (user_payments_info)...
+Valor recuperado do fallback: 0
+Valor final retornado: 0.00

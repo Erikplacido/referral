@@ -1,0 +1,316 @@
+/* 
+  ------------------------------
+  1. Reset Básico 
+  ------------------------------
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  ------------------------------
+  2. Fonte e Estilização do Body 
+  ------------------------------
+*/
+body {
+  background: linear-gradient(135deg, #0D203A, #1C2A40);
+  color: #E5E5E5;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* 
+  ------------------------------
+  3. Container Principal 
+  ------------------------------
+*/
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+/* 
+  ------------------------------
+  4. Cabeçalho
+  ------------------------------
+*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+header h2 {
+  color: #FFC107;
+  font-size: 1.6rem;
+  text-align: center;
+  flex: 1;
+}
+
+/* 
+  ------------------------------
+  5. Botão de Voltar
+  ------------------------------
+*/
+.btn-gold {
+  background-color: #FFC107;
+  border: none;
+  color: #11284B;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  text-align: center;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-gold:hover {
+  background-color: #e6ad06;
+  transform: scale(1.02);
+}
+
+/* 
+  ------------------------------
+  6. Formulários em Coluna
+  ------------------------------
+*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* 
+  ------------------------------
+  7. Labels e Inputs 
+  ------------------------------
+*/
+form label {
+  font-weight: 600;
+  color: #FFC107;
+  font-size: 1rem;
+  display: block;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #E5E5E5;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-size: 1rem;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: #FFC107;
+  box-shadow: 0 0 6px rgba(255, 193, 7, 0.5);
+}
+
+/* 
+  ------------------------------
+  8. Botões do Formulário 
+  ------------------------------
+*/
+form button {
+  padding: 14px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #FFC107;
+  color: #11284B;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+form button:hover {
+  background-color: #e6ad06;
+  transform: scale(1.02);
+}
+
+/* 
+  ------------------------------
+  9. Títulos de Seção (h3)
+  ------------------------------
+*/
+h3 {
+  color: #FFC107;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* 
+  ------------------------------
+  10. Tabela de Pagamentos 
+  ------------------------------
+*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table thead {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba
+
+Para melhorar a disposição dos campos no formulário e deixar tudo em uma única coluna, facilitando a usabilidade, vou ajustar o CSS da `form` para uma estrutura em coluna. Isso deixará os campos mais organizados e fáceis de visualizar.
+
+### Alterações principais:
+- Ajustar o `display` do `form` para `flex` com `flex-direction: column;`
+- Melhorar o espaçamento entre os campos (`gap` maior).
+- Manter os botões centralizados e responsivos.
+- Garantir que a tabela de pagamentos também fique mais legível em telas menores.
+
+---
+
+### CSS atualizado:
+
+```css
+/* 
+  ------------------------------
+  6. Formulários (Melhorado)
+  ------------------------------
+  - Agora os campos ficam em uma única coluna.
+  - Ajustei espaçamentos para melhor organização.
+*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ajuste nas labels para melhorar a visibilidade */
+form label {
+  font-weight: 600;
+  color: #FFC107;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Ajuste nos inputs e selects */
+form input,
+form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #E5E5E5;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Efeito ao focar nos inputs */
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: #FFC107;
+  box-shadow: 0 0 6px rgba(255, 193, 7, 0.5);
+}
+
+/* 
+  ------------------------------
+  9. Botões de Formulário 
+  ------------------------------
+  - Melhor disposição para centralizar melhor os botões.
+*/
+form button {
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #FFC107;
+  color: #11284B;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+
+form button:hover {
+  background-color: #e6ad06;
+  transform: scale(1.03);
+  box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);
+}
+
+/* 
+  ------------------------------
+  10. Tabela de Pagamentos (Melhorada)
+  ------------------------------
+  - Agora a tabela fica mais legível em telas menores.
+*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1rem;
+  color: #E5E5E5;
+}
+
+table th {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFC107;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  /* Ajustando formulários para ocupar toda a tela */
+  form {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  table th,
+  table td {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}

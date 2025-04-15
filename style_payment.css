@@ -1,0 +1,180 @@
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte Padrão */
+body {
+  background: #F5F7FA; /* Fundo mais claro */
+  color: #333; /* Texto escuro para boa leitura */
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Container Principal */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px;
+  background: #FFFFFF; /* Fundo branco para contraste */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E0E0E0; /* Borda leve */
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h2 {
+  color: #11284B; /* Novo Azul */
+  font-size: 1.8rem;
+}
+
+/* Botão de Voltar */
+.btn-gold {
+  background-color: #11284B; /* Azul substituído */
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-gold:hover {
+  background-color: #0d1e39; /* Tom mais escuro para hover */
+  transform: scale(1.05);
+}
+
+/* Botões de ação do admin */
+.btn-danger {
+  background-color: #DC3545; /* Vermelho para ações perigosas */
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #B22222;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Labels */
+form label {
+  font-weight: 600;
+  color: #11284B; /* Azul substituído */
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Campos de entrada */
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #CCC;
+  border-radius: 6px;
+  background-color: #FAFAFA;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus, form select:focus {
+  outline: none;
+  border-color: #11284B; /* Azul substituído */
+  box-shadow: 0 0 8px rgba(17, 40, 75, 0.4);
+}
+
+/* Separação de seções */
+h3 {
+  color: #11284B; /* Azul substituído */
+  margin-top: 20px;
+}
+
+/* Lista de períodos */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: #F8F9FA;
+  border: 1px solid #DDD;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 6px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #11284B; /* Azul substituído */
+  font-weight: bold;
+  display: block;
+}
+
+ul li:hover {
+  background: #E9ECEF;
+}
+
+/* Tabela de pagamentos */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table thead {
+  background: #11284B; /* Azul substituído */
+  color: white;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #DDD;
+}
+
+table tbody tr:hover {
+  background: #F1F1F1;
+}
+
+.user-info {
+    font-size: 1.1rem;
+    color: #11284B;
+    margin-top: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  .btn-gold, .btn-danger {
+    width: 100%;
+    text-align: center;
+  }
+}
