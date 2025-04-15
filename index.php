@@ -175,33 +175,46 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-sr
 <div id="changePassword" class="tab-content">
   <h2>Change Password</h2>
 
-  <!-- Formulário padrão -->
-  <form id="changePasswordForm">
+  <form id="changePasswordForm" method="POST" action="update_password.php">
     <div class="form-group">
       <label for="currentPassword">Current Password</label>
-      <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter current password">
+      <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter current password" required>
     </div>
+
     <div class="form-group">
       <label for="newPassword">New Password</label>
-      <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password">
+      <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password" required>
     </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm New Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password" required>
+    </div>
+
+    <!-- ✅ Checkbox para revelar senha -->
+    <div class="form-group">
+      <input type="checkbox" id="mostrarSenha">
+      <label for="mostrarSenha">Show Passwords</label>
+    </div>
+
     <button type="submit" class="btn-gold">Send</button>
   </form>
 
-  <!-- Link "Esqueci a senha" -->
+  <!-- Link "Forgot password" -->
   <p style="margin-top: 15px;">
     <a href="#" id="forgotPasswordLink">Forgot password</a>
   </p>
 
   <!-- Formulário para solicitar redefinição -->
-  <form id="forgotPasswordForm" style="display: none; margin-top: 20px;">
+  <form id="forgotPasswordForm" method="POST" action="send_reset_email.php" style="display: none; margin-top: 20px;">
     <div class="form-group">
       <label for="resetEmail">Enter your email to reset</label>
-      <input type="email" id="resetEmail" name="resetEmail" placeholder="your email">
+      <input type="email" id="resetEmail" name="resetEmail" placeholder="your email" required>
     </div>
     <button type="submit" class="btn-gold">Send reset email</button>
   </form>
 </div>
+
         </div>
       </div>
     </div>
@@ -216,6 +229,8 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-sr
   <script src="script_ranking.js"></script>
   <script src="script_club.js"></script>
   <script src="script_posicao.js"></script>
+  <script src="script_password.js"></script>
+
 
 </body>
 </html>
