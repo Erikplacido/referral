@@ -44,15 +44,13 @@ async function fetchUserData() {
 
         if (!data.user) throw new Error("Usuário não encontrado");
 
- // Atualizar informações do usuário (nome completo)
+        // Atualizar informações do usuário (nome completo)
         const nome = data.user.name || '';
         const sobrenome = data.user.sobrenome || '';
         document.querySelector('.user-name').textContent = `${nome} ${sobrenome}`.trim();
 
         document.querySelector('[data-referral-code]').textContent = data.user.referral_code || 'N/A';
         document.querySelector('[data-club-category]').textContent = data.user.club_category || 'N/A';
-
-
 
         // Atualizar Overview
         if (data.overview) {
@@ -84,21 +82,40 @@ async function fetchBankDetails() {
 
         if (!data.bankDetails) {
             console.error("Dados bancários não encontrados.");
+            const editBtn = document.getElementById("editBankDetails");
+            if (editBtn) editBtn.style.display = 'none';
             return;
         }
 
         console.log("Dados bancários recebidos:", data); // Debug
 
-        document.getElementById("bankName").value = data.bankDetails.bankName || "";
-        document.getElementById("agency").value = data.bankDetails.agency || "";
-        document.getElementById("bsb").value = data.bankDetails.bsb || "";
-        document.getElementById("accountNumber").value = data.bankDetails.accountNumber || "";
-        document.getElementById("abnNumber").value = data.bankDetails.abnNumber || "";
+        const { bankName, agency, bsb, accountNumber, abnNumber } = data.bankDetails;
 
-        // Bloqueia os campos para evitar edição direta até clicar no botão "Editar"
-        document.querySelectorAll("#paymentHistoryForm input").forEach(input => {
-            input.setAttribute("readonly", true);
-        });
+        document.getElementById("bankName").value = bankName || "";
+        document.getElementById("agency").value = agency || "";
+        document.getElementById("bsb").value = bsb || "";
+        document.getElementById("accountNumber").value = accountNumber || "";
+        document.getElementById("abnNumber").value = abnNumber || "";
+
+        // Determina se há dados existentes
+        const hasData = bankName || agency || bsb || accountNumber || abnNumber;
+
+        const editBtn = document.getElementById("editBankDetails");
+        if (editBtn) {
+            if (!hasData) {
+                // sem dados: oculta Edit e libera inputs para inserir
+                editBtn.style.display = 'none';
+                document.querySelectorAll("#paymentHistoryForm input").forEach(input => {
+                    input.removeAttribute("readonly");
+                });
+            } else {
+                // com dados: mostra Edit e bloqueia inputs até editar
+                editBtn.style.display = '';
+                document.querySelectorAll("#paymentHistoryForm input").forEach(input => {
+                    input.setAttribute("readonly", true);
+                });
+            }
+        }
 
     } catch (error) {
         console.error("Erro ao carregar dados bancários:", error);
@@ -106,36 +123,43 @@ async function fetchBankDetails() {
 }
 
 // ✅ Habilitar edição dos campos bancários
-document.getElementById("editBankDetails").addEventListener("click", () => {
-    document.querySelectorAll("#paymentHistoryForm input").forEach(input => {
-        input.removeAttribute("readonly");
+const editBtn = document.getElementById("editBankDetails");
+if (editBtn) {
+    editBtn.addEventListener("click", () => {
+        document.querySelectorAll("#paymentHistoryForm input").forEach(input => {
+            input.removeAttribute("readonly");
+        });
+        editBtn.style.display = 'none';
     });
-});
+}
 
 // ✅ Atualizar os dados bancários do usuário
-document.getElementById("paymentHistoryForm").addEventListener("submit", async (event) => {
-    event.preventDefault();
+const paymentForm = document.getElementById("paymentHistoryForm");
+if (paymentForm) {
+    paymentForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-    const formData = new FormData(event.target);
+        const formData = new FormData(event.target);
 
-    try {
-        const response = await fetch("update_payments_info.php", {
-            method: "POST",
-            body: formData
-        });
+        try {
+            const response = await fetch("update_payments_info.php", {
+                method: "POST",
+                body: formData
+            });
 
-        const result = await response.json();
+            const result = await response.json();
 
-        if (result.message) {
-            alert(result.message);
-            fetchBankDetails(); // Recarrega os dados após a atualização
-        } else if (result.error) {
-            alert("Erro: " + result.error);
+            if (result.message) {
+                alert(result.message);
+                fetchBankDetails(); // Recarrega os dados após a atualização
+            } else if (result.error) {
+                alert("Erro: " + result.error);
+            }
+        } catch (error) {
+            console.error("Erro ao atualizar os dados bancários:", error);
         }
-    } catch (error) {
-        console.error("Erro ao atualizar os dados bancários:", error);
-    }
-});
+    });
+}
 
 // ✅ Evento principal que executa todas as funções ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
@@ -159,8 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-
-
+// Forgot Password toggle
 document.getElementById("forgotPasswordLink").addEventListener("click", function (e) {
     e.preventDefault();
     document.getElementById("forgotPasswordForm").style.display = "block";
@@ -186,29 +209,29 @@ document.getElementById("forgotPasswordForm").addEventListener("submit", async f
     }
 });
 
-
+// Share Referral
 document.addEventListener('DOMContentLoaded', () => {
-  const shareBtn = document.getElementById("shareReferralBtn");
-  const referralElement = document.querySelector('[data-referral-code]');
-  const feedback = document.getElementById("referralFeedback");
+    const shareBtn = document.getElementById("shareReferralBtn");
+    const referralElement = document.querySelector('[data-referral-code]');
+    const feedback = document.getElementById("referralFeedback");
 
-  if (shareBtn && referralElement) {
-    shareBtn.addEventListener('click', () => {
-      const code = referralElement.textContent.trim();
-      if (!code) {
-        alert("Referral code not loaded yet.");
-        return;
-      }
+    if (shareBtn && referralElement) {
+        shareBtn.addEventListener('click', () => {
+            const code = referralElement.textContent.trim();
+            if (!code) {
+                alert("Referral code not loaded yet.");
+                return;
+            }
 
-      const shareLink = `https://bluefacilityservices.com.au/${code}`;
+            const shareLink = `https://bluefacilityservices.com.au/${code}`;
 
-      // Copia para área de transferência
-      navigator.clipboard.writeText(shareLink).then(() => {
-        feedback.style.display = "block";
-        setTimeout(() => (feedback.style.display = "none"), 3000);
-      }).catch(err => {
-        console.error("Failed to copy referral link:", err);
-      });
-    });
-  }
+            // Copia para área de transferência
+            navigator.clipboard.writeText(shareLink).then(() => {
+                feedback.style.display = "block";
+                setTimeout(() => (feedback.style.display = "none"), 3000);
+            }).catch(err => {
+                console.error("Failed to copy referral link:", err);
+            });
+        });
+    }
 });

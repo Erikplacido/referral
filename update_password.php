@@ -1,71 +1,79 @@
 <?php
-// update_password.php
-
+require_once 'conexao.php';
 session_start();
 
-// 1) Verifica se o usuário está logado
+// Habilitar exibição de erros para depuração (desative em produção)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if (!isset($_SESSION['user_id'])) {
-    http_response_code(403);
-    echo json_encode(["error" => "Acesso não autorizado. É necessário estar logado."]);
+    header("Location: login.php");
     exit;
 }
 
-// 2) Conexão com o banco de dados
-require_once 'conexao.php';
-header('Content-Type: application/json; charset=utf-8');
-
-// 3) Pega o ID do usuário logado
-$userId = $_SESSION['user_id'];
-
-// 4) Recebe os dados do formulário
-$currentPassword  = $_POST['currentPassword']  ?? '';
-$newPassword      = $_POST['newPassword']      ?? '';
-$confirmPassword  = $_POST['confirmPassword']  ?? '';
-
-// 5) Validação básica
-if (strlen($newPassword) < 6) {
-    echo json_encode(["error" => "A nova senha deve ter ao menos 6 caracteres."]);
-    exit;
-}
-
-if ($newPassword !== $confirmPassword) {
-    echo json_encode(["error" => "As novas senhas não coincidem."]);
-    exit;
-}
-
-// 6) Busca a senha atual no banco
-$sql = "SELECT password FROM users WHERE id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $userId);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows === 0) {
-    echo json_encode(["error" => "Usuário não encontrado."]);
-    exit;
-}
-
-$user = $result->fetch_assoc();
-$hashSenhaAtual = $user['password'];
-
-// 7) Verifica se a senha atual confere
-if (!password_verify($currentPassword, $hashSenhaAtual)) {
-    echo json_encode(["error" => "Senha atual incorreta."]);
-    exit;
-}
-
-// 8) Gera hash da nova senha
-$hashNova = password_hash($newPassword, PASSWORD_DEFAULT);
-
-// 9) Atualiza no banco de dados
-$sqlUpdate = "UPDATE users SET password = ? WHERE id = ?";
-$stmtUpdate = $conn->prepare($sqlUpdate);
-$stmtUpdate->bind_param("si", $hashNova, $userId);
-
-if ($stmtUpdate->execute()) {
-    echo json_encode(["message" => "Senha alterada com sucesso!"]);
+if (isset($_POST['currentPassword'], $_POST['newPassword'], $_POST['confirmPassword'])) {
+    $user_id = $_SESSION['user_id'];
+    $currentPassword = $_POST['currentPassword'];
+    $newPassword     = $_POST['newPassword'];
+    $confirmPassword = $_POST['confirmPassword'];
+    
+    // Verificar se a nova senha e a confirmação coincidem
+    if ($newPassword !== $confirmPassword) {
+        $_SESSION['error_message'] = "New passwords do not match.";
+        header("Location: index.php");
+        exit;
+    }
+    
+    // Recupera a hash atual da senha do banco
+    $query = "SELECT password FROM users WHERE id = ?";
+    if ($stmt = $conn->prepare($query)) {
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($row = $result->fetch_assoc()) {
+            $hash = $row['password'];
+            
+            // Verifica se a senha atual informada confere com o hash armazenado
+            if (password_verify($currentPassword, $hash)) {
+                // Gera o hash da nova senha
+                $newHash = password_hash($newPassword, PASSWORD_BCRYPT);
+                $updateQuery = "UPDATE users SET password = ? WHERE id = ?";
+                if ($updateStmt = $conn->prepare($updateQuery)) {
+                    $updateStmt->bind_param("si", $newHash, $user_id);
+                    if ($updateStmt->execute()) {
+                        $_SESSION['success_message'] = "Password changed successfully";
+                        header("Location: index.php");
+                        exit;
+                    } else {
+                        $_SESSION['error_message'] = "Failed to update password.";
+                        header("Location: index.php");
+                        exit;
+                    }
+                } else {
+                    $_SESSION['error_message'] = "Error preparing update query.";
+                    header("Location: index.php");
+                    exit;
+                }
+            } else {
+                $_SESSION['error_message'] = "Incorrect current password.";
+                header("Location: index.php");
+                exit;
+            }
+        } else {
+            $_SESSION['error_message'] = "User not found.";
+            header("Location: index.php");
+            exit;
+        }
+        $stmt->close();
+    } else {
+        $_SESSION['error_message'] = "Error preparing select query.";
+        header("Location: index.php");
+        exit;
+    }
 } else {
-    http_response_code(500);
-    echo json_encode(["error" => "Erro ao atualizar a senha no banco de dados."]);
+    $_SESSION['error_message'] = "Insufficient data to update password.";
+    header("Location: index.php");
+    exit;
 }
 ?>

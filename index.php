@@ -43,12 +43,21 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-sr
   
   <!-- 2) Removemos as meta http-equiv de X-Frame-Options e CSP,
        pois agora elas já estão definidas nos cabeçalhos HTTP. -->
-
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
+    <?php
+      if (isset($_SESSION['success_message'])) {
+          echo "<div style='color: limegreen; text-align: center; margin-bottom: 10px;'>" . $_SESSION['success_message'] . "</div>";
+          unset($_SESSION['success_message']);
+      }
+      if (isset($_SESSION['error_message'])) {
+          echo "<div style='color: red; text-align: center; margin-bottom: 10px;'>" . $_SESSION['error_message'] . "</div>";
+          unset($_SESSION['error_message']);
+      }
+    ?>
     <!-- Cabeçalho -->
     <header>
       <div class="user-details">
@@ -60,14 +69,11 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-sr
           <p>Your position in the referral ranking is <strong data-referral-ranking=""></strong></p>
           <p id="ranking-info" class="ranking-info">Ranking: <span class="ranking-value" data-ranking-info>Load...</span></p>
           
-          
           <!-- ✅ Botão para compartilhar o referral -->
-<button id="shareReferralBtn" class="btn-gold" style="margin-top: 10px;">
-  Share your Referral Code
-</button>
-<p id="referralFeedback" style="color: limegreen; display: none;">Link copied! Ready to share 🎉</p>
-          
-          
+          <button id="shareReferralBtn" class="btn-gold" style="margin-top: 10px;">
+            Share your Referral Code
+          </button>
+          <p id="referralFeedback" style="color: limegreen; display: none;">Link copied! Ready to share 🎉</p>
         </div>
       </div>
       <div class="header-buttons">
@@ -145,83 +151,126 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-sr
         </div>
         <div class="modal-tab-content">
           <!-- Aba Payment History -->
-          <div id="paymentHistory" class="tab-content active">
-            <h2>Bank Account Details</h2>
-            <form id="paymentHistoryForm">
-              <div class="form-group">
-                <input type="text" id="bankName" name="bankName" placeholder="Enter Bank Name" data-bank-name="" >
-              </div>
-              <div class="form-group">
-                <label for="agency">Agency</label>
-                <input type="text" id="agency" name="agency" placeholder="Enter Agency" data-agency="" >
-              </div>
-              <div class="form-group">
-                <label for="bsb">BSB</label>
-                <input type="text" id="bsb" name="bsb" placeholder="Enter BSB" data-bsb="" >
-              </div>
-              <div class="form-group">
-                <label for="accountNumber">Account Number</label>
-                <input type="text" id="accountNumber" name="accountNumber" placeholder="Enter Account Number" data-account-number="" >
-              </div>
-              <div class="form-group">
-                <label for="abnNumber">ABN Number</label>
-                <input type="text" id="abnNumber" name="abnNumber" placeholder="Enter ABN Number" data-abn-number="" >
-              </div>
-              <button type="button" id="editBankDetails" class="btn-gold">Edit</button>
-              <button type="submit" class="btn-gold">Send</button>
-            </form>
-          </div>
-<!-- Aba Change Password -->
-<div id="changePassword" class="tab-content">
-  <h2>Change Password</h2>
-
-  <form id="changePasswordForm" method="POST" action="update_password.php">
+<div id="paymentHistory" class="tab-content active">
+  <h2>Bank Account Details</h2>
+  <form id="paymentHistoryForm" method="POST" action="save_bank_details.php">
+    <?php
+      // verifica se já há dados
+      $hasData = strlen(trim($bankName . $agency . $bsb . $accountNumber . $abnNumber)) > 0;
+    ?>
     <div class="form-group">
-      <label for="currentPassword">Current Password</label>
-      <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter current password" required>
+      <input
+        type="text"
+        id="bankName"
+        name="bankName"
+        placeholder="Enter Bank Name"
+        value="<?php echo htmlspecialchars($bankName); ?>"
+        <?php echo $hasData ? 'disabled' : ''; ?>>
+    </div>
+    <div class="form-group">
+      <label for="agency">Agency</label>
+      <input
+        type="text"
+        id="agency"
+        name="agency"
+        placeholder="Enter Agency"
+        value="<?php echo htmlspecialchars($agency); ?>"
+        <?php echo $hasData ? 'disabled' : ''; ?>>
+    </div>
+    <div class="form-group">
+      <label for="bsb">BSB</label>
+      <input
+        type="text"
+        id="bsb"
+        name="bsb"
+        placeholder="Enter BSB"
+        value="<?php echo htmlspecialchars($bsb); ?>"
+        <?php echo $hasData ? 'disabled' : ''; ?>>
+    </div>
+    <div class="form-group">
+      <label for="accountNumber">Account Number</label>
+      <input
+        type="text"
+        id="accountNumber"
+        name="accountNumber"
+        placeholder="Enter Account Number"
+        value="<?php echo htmlspecialchars($accountNumber); ?>"
+        <?php echo $hasData ? 'disabled' : ''; ?>>
+    </div>
+    <div class="form-group">
+      <label for="abnNumber">ABN Number</label>
+      <input
+        type="text"
+        id="abnNumber"
+        name="abnNumber"
+        placeholder="Enter ABN Number"
+        value="<?php echo htmlspecialchars($abnNumber); ?>"
+        <?php echo $hasData ? 'disabled' : ''; ?>>
     </div>
 
-    <div class="form-group">
-      <label for="newPassword">New Password</label>
-      <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password" required>
-    </div>
+    <!-- Só exibe o botão Edit se já tiver dados -->
+    <?php if ($hasData): ?>
+      <button type="button" id="editBankDetails" class="btn-gold">Edit</button>
+    <?php endif; ?>
 
-    <div class="form-group">
-      <label for="confirmPassword">Confirm New Password</label>
-      <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password" required>
-    </div>
-
-    <!-- ✅ Checkbox para revelar senha -->
-    <div class="form-group">
-      <input type="checkbox" id="mostrarSenha">
-      <label for="mostrarSenha">Show Passwords</label>
-    </div>
-
-    <button type="submit" class="btn-gold">Send</button>
-  </form>
-
-  <!-- Link "Forgot password" -->
-  <p style="margin-top: 15px;">
-    <a href="#" id="forgotPasswordLink">Forgot password</a>
-  </p>
-
-  <!-- Formulário para solicitar redefinição -->
-  <form id="forgotPasswordForm" method="POST" action="send_reset_email.php" style="display: none; margin-top: 20px;">
-    <div class="form-group">
-      <label for="resetEmail">Enter your email to reset</label>
-      <input type="email" id="resetEmail" name="resetEmail" placeholder="your email" required>
-    </div>
-    <button type="submit" class="btn-gold">Send reset email</button>
+    <button type="submit" class="btn-gold">
+      <?php echo $hasData ? 'Update' : 'Save'; ?>
+    </button>
   </form>
 </div>
 
+          <!-- Aba Change Password -->
+          <div id="changePassword" class="tab-content">
+            <h2>Change Password</h2>
+            <form id="changePasswordForm" method="POST" action="update_password.php">
+              <div class="form-group">
+                <label for="currentPassword">Current Password</label>
+                <div class="input-icon-wrapper">
+                  <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter current password" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <div class="input-icon-wrapper">
+                  <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm New Password</label>
+                <div class="input-icon-wrapper">
+                  <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password" required>
+                </div>
+              </div>
+
+              <!-- 👁️ Botão único abaixo dos campos -->
+              <div class="form-group toggle-password-group">
+                <button type="button" class="toggle-password" onclick="toggleAllPasswords(this)">
+                  <img src="assets/img/eye.svg" id="eyeIcon" alt="Show Passwords" width="24" height="24">
+                  <span id="toggleText" style="margin-left: 8px;">Show Password</span>
+                </button>
+              </div>
+
+              <button type="submit" class="btn-gold">Send</button>
+            </form>
+
+            <p style="margin-top: 15px;">
+              <a href="#" id="forgotPasswordLink">Forgot password</a>
+            </p>
+
+            <form id="forgotPasswordForm" method="POST" action="send_reset_email.php" style="display: none; margin-top: 20px;">
+              <div class="form-group">
+                <label for="resetEmail">Enter your email to reset</label>
+                <input type="email" id="resetEmail" name="resetEmail" placeholder="your email" required>
+              </div>
+              <button type="submit" class="btn-gold">Send reset email</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div> <!-- Fim da .container -->
 
   <!-- Inclusão do script externo -->
-  
   <script src="script.js"></script>
   <script src="script_total_received.js"></script>
   <script src="script_next_due.js"></script>
@@ -230,7 +279,5 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-sr
   <script src="script_club.js"></script>
   <script src="script_posicao.js"></script>
   <script src="script_password.js"></script>
-
-
 </body>
 </html>

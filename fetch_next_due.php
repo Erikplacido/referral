@@ -17,28 +17,12 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 fwrite($log, "Usuário ID: $user_id\n");
 
-// ✅ Correção do ciclo vigente: do dia 15 de um mês ao dia 14 do mês seguinte
-$today = new DateTime();
-$day = (int)$today->format('d');
+// Definindo a janela de datas com base no mês atual
+$start_date_str = date("Y-m-01");  // Primeiro dia do mês atual
+$end_date_str   = date("Y-m-t");    // Último dia do mês atual
+fwrite($log, "Mês em questão: $start_date_str até $end_date_str\n");
 
-if ($day < 15) {
-    // ciclo anterior (ex: se hoje é 02/04, pega 15/03 a 14/04)
-    $start_date = new DateTime($today->format('Y-m-') . '15');
-    $start_date->modify('-1 month');
-    $end_date = new DateTime($today->format('Y-m-') . '14');
-} else {
-    // ciclo atual
-    $start_date = new DateTime($today->format('Y-m-') . '15');
-    $end_date = new DateTime($today->format('Y-m-') . '14');
-    $end_date->modify('+1 month');
-}
-
-$start_date_str = $start_date->format('Y-m-d');
-$end_date_str = $end_date->format('Y-m-d');
-
-fwrite($log, "Ciclo vigente: $start_date_str até $end_date_str\n");
-
-// 1) Consulta pagamentos dentro do ciclo atual
+// 1) Consulta pagamentos realizados no mês atual
 $query = "
     SELECT SUM(payment_value) AS next_due 
     FROM payments 
@@ -54,7 +38,7 @@ $data = $result->fetch_assoc();
 $stmt->close();
 
 $next_due = $data['next_due'] ?? 0;
-fwrite($log, "Total encontrado no ciclo atual (payments): " . var_export($next_due, true) . "\n");
+fwrite($log, "Total encontrado no mês atual (payments): " . var_export($next_due, true) . "\n");
 
 // 2) Fallback: Consulta na user_payments_info se o valor for nulo ou zero
 if (!$next_due || $next_due == 0) {
@@ -74,7 +58,7 @@ if (!$next_due || $next_due == 0) {
 
 $conn->close();
 
-// 3) Retorna o valor formatado
+// 3) Retorna o valor formatado com duas casas decimais
 $final = number_format($next_due, 2, '.', '');
 fwrite($log, "Valor final retornado: $final\n");
 fclose($log);
@@ -82,3 +66,4 @@ fclose($log);
 echo json_encode([
     "next_due" => $final
 ]);
+?>

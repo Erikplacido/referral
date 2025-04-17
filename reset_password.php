@@ -46,25 +46,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Redefinir Senha</title>
     <link rel="stylesheet" href="login-style.css">
-    <script>
-      function validarSenha() {
-        const senha = document.getElementById("newPassword").value;
-        const confirmar = document.getElementById("confirmPassword").value;
-        if (senha !== confirmar) {
-          alert("As senhas não coincidem.");
-          return false;
-        }
-        return true;
+    <style>
+      .input-icon-wrapper {
+        position: relative;
       }
-
-      function toggleSenha() {
-        const campos = ["newPassword", "confirmPassword"];
-        campos.forEach(id => {
-          const input = document.getElementById(id);
-          input.type = input.type === "password" ? "text" : "password";
-        });
+      .input-icon-wrapper input {
+        padding-right: 40px;
       }
-    </script>
+      .toggle-password {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+      .toggle-password img {
+        width: 20px;
+        opacity: 0.6;
+      }
+    </style>
 </head>
 <body>
   <div class="login-container">
@@ -75,22 +75,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="form-group">
           <label for="newPassword">Nova Senha</label>
-          <input type="password" name="newPassword" id="newPassword" required>
+          <div class="input-icon-wrapper">
+            <input type="password" name="newPassword" id="newPassword" required>
+            <span class="toggle-password" onclick="togglePassword(this, 'newPassword')">
+              <img src="assets/img/eye.svg" alt="Mostrar">
+            </span>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="confirmPassword">Confirmar Nova Senha</label>
-          <input type="password" name="confirmPassword" id="confirmPassword" required>
-        </div>
-
-        <div class="form-group">
-          <input type="checkbox" id="mostrarSenha" onclick="toggleSenha()">
-          <label for="mostrarSenha">Mostrar Senhas</label>
+          <div class="input-icon-wrapper">
+            <input type="password" name="confirmPassword" id="confirmPassword" required>
+            <span class="toggle-password" onclick="togglePassword(this, 'confirmPassword')">
+              <img src="assets/img/eye.svg" alt="Mostrar">
+            </span>
+          </div>
         </div>
 
         <button type="submit" class="btn-gold">Salvar Nova Senha</button>
       </form>
     </div>
   </div>
+
+  <script>
+    function validarSenha() {
+      const senha = document.getElementById("newPassword").value;
+      const confirmar = document.getElementById("confirmPassword").value;
+      if (senha !== confirmar) {
+        alert("As senhas não coincidem.");
+        return false;
+      }
+      return true;
+    }
+
+    function togglePassword(el, inputId) {
+      const input = document.getElementById(inputId);
+      const icon = el.querySelector("img");
+
+      if (input.type === "password") {
+        input.type = "text";
+        icon.src = "assets/img/eye-off.svg";
+      } else {
+        input.type = "password";
+        icon.src = "assets/img/eye.svg";
+      }
+    }
+  </script>
 </body>
 </html>

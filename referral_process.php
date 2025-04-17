@@ -97,8 +97,8 @@ try {
     $mail->CharSet = 'UTF-8';
 
     $mail->send();
-    echo "<script>alert('Indicação enviada e salva com sucesso!'); window.location.href='index.php';</script>";
+    echo "<script>alert('Referral submitted successfully!'); window.location.href='index.php';</script>";
 } catch (Exception $e) {
-    echo "<script>alert('Erro ao enviar o e-mail: {$mail->ErrorInfo}'); history.back();</script>";
+    echo "<script>alert('Error sending your referral: {$mail->ErrorInfo}'); history.back();</script>";
 }
 ?>

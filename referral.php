@@ -47,8 +47,8 @@ $stmt->close();
           <input type="text" name="nome" required>
         </div>
         <div class="form-group">
-          <label>Last name</label>
-          <input type="text" name="sobrenome" required>
+             <label>Last name</label>
+             <input type="text" name="sobrenome">
         </div>
         <div class="form-group">
           <label>Email</label>

@@ -1,3 +1,4 @@
+```css
 /* Reset básico */
 * {
   margin: 0;
@@ -111,37 +112,33 @@ header {
   width: 44px;
   height: 44px;
   font-size: 1.5rem;
-  font-weight: bold; /* Tenta forçar negrito */
-  -webkit-text-stroke: 1px; /* Força um contorno mais espesso */
+  font-weight: bold;
+  -webkit-text-stroke: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1; /* Ajusta altura da linha */
-  position: relative; /* Permite movimentação */
+  line-height: 1;
+  position: relative;
 }
 
 .logout-icon:hover {
   transform: scale(1.1);
-  background-color: #d9534f; /* Tom vermelho para saída */
+  background-color: #d9534f;
 }
-/* Estiliza o texto geral do ranking */
+
+/* Ranking */
 .ranking-info {
-  font-size: 0.70rem; /* Ligeiramente menor */
-  font-weight: bold; /* Mantém o título em destaque */
-  color: #ffffff; /* Cor branca ou ajuste conforme necessário */
+  font-size: 0.70rem;
+  font-weight: bold;
+  color: #ffffff;
 }
 
-/* Estiliza apenas o valor do ranking dentro do span */
 .ranking-value {
-  font-size: 0.70rem; /* Tamanho menor para o valor do ranking */
-  font-weight: normal; /* Menos ênfase que o título */
-  color: #FFD700; /* Dourado para destacar (ajuste conforme necessidade) */
-  margin-left: 5px; /* Pequeno espaço entre "Ranking:" e o valor */
+  font-size: 0.70rem;
+  font-weight: normal;
+  color: #FFD700;
+  margin-left: 5px;
 }
-
-
-
-
 
 /* HR */
 hr {
@@ -360,42 +357,82 @@ hr {
   box-shadow: 0 0 8px rgba(255, 193, 7, 0.6);
 }
 
+/* 🔐 Campos de senha com ícone (toggle visual) */
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon-wrapper input {
+  flex: 1;
+  padding-right: 40px;
+}
+
+/* Atualização do botão de toggle de senha */
+.toggle-password-group {
+  display: block;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.toggle-password {
+  background: none;
+  border: none;
+  color: #D1D1D1;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.toggle-password img {
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.toggle-password:hover img {
+  opacity: 1;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .user-details {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  
+
   .header-buttons {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
   }
-  
+
   .btn-gold {
     padding: 8px 14px;
     margin: 5px;
   }
-  
+
   .stats-container {
     overflow-x: auto;
   }
-  
+
   .payments-info {
     overflow-x: auto;
   }
-  
+
   .payments-table {
     font-size: 0.9rem;
   }
 }
+
 #forgotPasswordLink {
   color: white;
 }

@@ -7,6 +7,26 @@ require_once 'conexao.php';
   <meta charset="UTF-8" />
   <title>Login - Projeto</title>
   <link rel="stylesheet" href="login-style.css">
+  <style>
+    .input-icon-wrapper {
+      position: relative;
+    }
+    .input-icon-wrapper input[type="password"],
+    .input-icon-wrapper input[type="text"] {
+      padding-right: 40px;
+    }
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    .toggle-password img {
+      width: 20px;
+      opacity: 0.6;
+    }
+  </style>
 </head>
 <body>
   <div class="login-container">
@@ -22,7 +42,12 @@ require_once 'conexao.php';
 
         <div class="form-group">
           <label for="password">Senha</label>
-          <input type="password" name="password" id="password" required>
+          <div class="input-icon-wrapper">
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <span class="toggle-password" onclick="togglePassword(this, 'password')">
+              <img src="assets/img/eye.svg" alt="Mostrar senha" id="toggleIcon">
+            </span>
+          </div>
         </div>
 
         <button type="submit" class="btn-gold">Entrar</button>
@@ -73,6 +98,20 @@ require_once 'conexao.php';
         alert(data.error || "Erro ao processar solicitação.");
       }
     });
+
+    // Mostrar/ocultar senha
+    function togglePassword(el, inputId) {
+      const input = document.getElementById(inputId);
+      const icon = el.querySelector("img");
+
+      if (input.type === "password") {
+        input.type = "text";
+        icon.src = "assets/img/eye-off.svg";
+      } else {
+        input.type = "password";
+        icon.src = "assets/img/eye.svg";
+      }
+    }
   </script>
 </body>
 </html>

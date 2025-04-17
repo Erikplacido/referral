@@ -63,7 +63,7 @@ $stmt->close();
 $payments = [];
 $period_start = null;
 $period_end = null;
-$total_next_due = 0.0;  // Corrected
+$total_next_due = 0.0;
 
 if (isset($_GET['period_start']) && isset($_GET['period_end'])) {
     $period_start = $_GET['period_start'];
@@ -102,18 +102,17 @@ $conn->close();
       font-family: 'Montserrat', sans-serif;
       background: transparent;
       color: #333;
-      padding: 16px;
+      font-size: 12px;
     }
     .bento-box {
       background: #ffffff;
       border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       padding: 20px;
     }
     h2, h3 {
-      font-size: 1.2rem;
+      font-size: 16px;
       color: #11284B;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .user-info {
       margin-bottom: 20px;
@@ -179,6 +178,19 @@ $conn->close();
     .no-data {
       color: #999;
       font-style: italic;
+    }
+
+    /* 🔧 Estilo para inputs dentro da tabela (edição inline futura) */
+    .payment-table input[type="number"],
+    .payment-table input[type="text"],
+    .payment-table input[type="date"] {
+      padding: 4px;
+      font-size: 11px;
+      height: 24px;
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
     }
   </style>
 </head>
